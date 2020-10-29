@@ -4,12 +4,14 @@ import { TradeEntry } from "./trade";
 import { AddToLiquidity } from "./pool/add";
 import { PoolAccounts } from "./pool/view";
 import { useWallet } from "../utils/wallet";
+import { useSolong} from "../utils/solong-helper";
 import { AccountInfo } from "./accountInfo";
 import { Settings } from "./settings";
 import { SettingOutlined } from "@ant-design/icons";
 
 export const ExchangeView = (props: {}) => {
-  const { connected, wallet } = useWallet();
+  //const { connected, wallet } = useWallet();
+  const { connected, wallet } = useSolong();
   const tabStyle: React.CSSProperties = { width: 120 };
   const tabList = [
     {
@@ -60,7 +62,7 @@ export const ExchangeView = (props: {}) => {
             <Button
               type="text"
               size="large"
-              onClick={connected ? wallet.disconnect : wallet.connect}
+              onClick={ wallet.selectAccount}
               style={{ color: "#2abdd2" }}
             >
               Connect

@@ -6,15 +6,16 @@ import * as serviceWorker from "./serviceWorker";
 import { WalletProvider } from "./utils/wallet";
 import { ConnectionProvider } from "./utils/connection";
 import { AccountsProvider } from "./utils/accounts";
+import {SolongProvider} from "./utils/solong-helper"
 
 ReactDOM.render(
   <React.StrictMode>
     <ConnectionProvider>
-      <WalletProvider>
+      <WalletProvider><SolongProvider>
         <AccountsProvider>
           <App />
         </AccountsProvider>
-      </WalletProvider>
+      </SolongProvider></WalletProvider>
     </ConnectionProvider>
   </React.StrictMode>,
   document.getElementById("root")
