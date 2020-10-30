@@ -1,12 +1,12 @@
 import React from "react";
-import { useWallet } from "./../utils/wallet";
+import { useSolong} from "./../utils/solong-helper"
 import { shortenAddress } from "./../utils/utils";
 import { Identicon } from "./identicon";
 import { useNativeAccount } from "./../utils/accounts";
 import { LAMPORTS_PER_SOL } from "@solana/web3.js";
 
 export const AccountInfo = (props: {}) => {
-  const { wallet } = useWallet();
+  const { wallet } = useSolong();
   const { account } = useNativeAccount();
 
   if (!wallet || !wallet.publicKey) {

@@ -3,14 +3,12 @@ import { Button, Card, Popover } from "antd";
 import { TradeEntry } from "./trade";
 import { AddToLiquidity } from "./pool/add";
 import { PoolAccounts } from "./pool/view";
-import { useWallet } from "../utils/wallet";
 import { useSolong} from "../utils/solong-helper";
 import { AccountInfo } from "./accountInfo";
 import { Settings } from "./settings";
 import { SettingOutlined } from "@ant-design/icons";
 
 export const ExchangeView = (props: {}) => {
-  //const { connected, wallet } = useWallet();
   const { connected, wallet } = useSolong();
   const tabStyle: React.CSSProperties = { width: 120 };
   const tabList = [
@@ -40,7 +38,7 @@ export const ExchangeView = (props: {}) => {
       <div className="App-Bar-right">
         <Button type="text" size="large" style={{ color: "#2abdd2" }}>
           <a
-            href={"https://dex.projectserum.com"}
+            href={"https://serum.today"}
             target="_blank"
             rel="noopener noreferrer"
           >

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button } from "antd";
 
 import { removeLiquidity } from "../../utils/pools";
-import { useWallet } from "../../utils/wallet";
+import { useSolong} from "../../utils/solong-helper";
 import { useConnection } from "../../utils/connection";
 import { PoolInfo, TokenAccount } from "../../models";
 import { notify } from "../../utils/notifications";
@@ -12,7 +12,7 @@ export const RemoveLiquidity = (props: {
 }) => {
   const { account, pool } = props.instance;
   const [pendingTx, setPendingTx] = useState(false);
-  const { wallet } = useWallet();
+  const { wallet } = useSolong();
   const connection = useConnection();
 
   const onRemove = async () => {

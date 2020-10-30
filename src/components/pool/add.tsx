@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { addLiquidity, usePoolForBasket } from "../../utils/pools";
 import { Button, Popover } from "antd";
-import { useWallet } from "../../utils/wallet";
+import { useSolong } from "../../utils/solong-helper"
 import { useConnection, useSlippageConfig } from "../../utils/connection";
 import { Spin } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
@@ -15,7 +15,7 @@ import { PoolConfig } from "../../models";
 const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
 
 export const AddToLiquidity = () => {
-  const { wallet } = useWallet();
+  const { wallet } = useSolong();
   const connection = useConnection();
   const [pendingTx, setPendingTx] = useState(false);
   const { A, B, setLastTypedAccount } = useCurrencyPairState();

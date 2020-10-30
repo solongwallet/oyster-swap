@@ -1,7 +1,7 @@
 import { Button, Spin } from "antd";
 import React, { useState } from "react";
 import { useConnection, useSlippageConfig } from "../../utils/connection";
-import { useWallet } from "../../utils/wallet";
+import { useSolong } from "../../utils/solong-helper";
 import { CurrencyInput, useCurrencyPairState } from "./../currencyInput";
 import { LoadingOutlined } from "@ant-design/icons";
 import { swap, usePoolForBasket } from "../../utils/pools";
@@ -17,7 +17,7 @@ const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
 // TODO: destination account shouldnt be required
 
 export const TradeEntry = () => {
-  const { wallet } = useWallet();
+  const { wallet } = useSolong();
   const connection = useConnection();
   const [pendingTx, setPendingTx] = useState(false);
   const { A, B, setLastTypedAccount } = useCurrencyPairState();
